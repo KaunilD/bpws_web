@@ -18,10 +18,10 @@ class App extends Component {
   getWorksheet = () => {
     console.log("fetching worksheet link");
     var parent = this;
-    axios.post('http://localhost:8890/', { })
+    axios.post('http://ec2-18-222-28-153.us-east-2.compute.amazonaws.com:8890/', { })
     .then(function (response) {
       parent.setState({gen_count: parent.state.gen_count+1});
-      window.open('http://localhost:8890/'+response.data.link);
+      window.open('http://ec2-18-222-28-153.us-east-2.compute.amazonaws.com:8890/'+response.data.link);
     })
     .catch(function (error) {
       console.log(error);
